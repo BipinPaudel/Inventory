@@ -30,9 +30,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 		echo $this->Html->css('cake.generic');
                 echo $this->Html->css('bootstrap');
-                echo $this->Html->css('font-awesome');
-                echo $this->Html->css('font-awesome.min');
-
+                //echo $this->Html->css('style');
+                   
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -41,6 +40,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <body>
 	<div class="container-fluid">
 		<div class="page-header">
+                    
 			<h2 class="header-content"><?php echo $this->Html->link($cakeDescription, ''); ?></h2>
                          
                          </div>
@@ -49,9 +49,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             
             
 		<div id="content">
+                    <div class="rmm">
             <ul class="nav nav-pills">
-                        
-                        
+               
                             <?php if(AuthComponent::user()) :?>
                         <li role="presentation"><a href="/inventory/Categories"> Categories</a></li>
                          <li role="presentation"><a href="/inventory/Sales">Sales</a></li>
@@ -64,11 +64,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             <?php echo $this->Session->read('Auth.User.username') ; ?> </strong></li>
                        </div>
                         </ul>
-                    <?php echo $this->Session->flash(); ?> <div> 
+                        </div>
+                    <?php echo $this->Session->flash(); ?> 
                         <?php else: ?>
                            
                             <?php endif; ?>
-                           
+                         
                             
 	            
 			<?php echo $this->Session->flash(); ?>
